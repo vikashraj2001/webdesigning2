@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change color after 5 sec</title>
+
+</head>
+<body onload="loadAlert()">
+<h1 style="text-align:center;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" id="header">Background color will change in <span id="timeTxt">5</span> sec</h1>
+
+<script>
+var i= 6;
+function loadAlert() {
+  i = i-1;
+  if(i==0){
+  setbackgroundColor();
+  }else if(i >0){
+  window.setTimeout( "loadAlert()", 1000);
+  }
+  document.getElementById("timeTxt").textContent = i;
+}
+
+function setbackgroundColor(){
+document.getElementsByTagName("body")[0].style.backgroundColor = "#152238";
+document.getElementById("header").style.color = "#FFFFFF";
+}
+</script>
+</body>
+</html>
